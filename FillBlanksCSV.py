@@ -11,5 +11,12 @@ if df.isnull().values.any():
 # Adding new column with value
 df["New_Column"] = "STA"
 
+
+# Rename Specific Columns
+df.rename(columns={"name": "Name", " job": "Universe"}, inplace=True)
+
+# Rename All Columns
+df.columns = ['name', 'Universe', 'City', 'New'
+
 # Writing CSV from updated DF
 df.to_csv("modified_data.csv", index=False)
