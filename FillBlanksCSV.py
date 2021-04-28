@@ -7,6 +7,9 @@ df = pd.read_csv("data.csv")
 if df.isnull().values.any():
     # Replace them with NONE
     df = df.fillna("NONE")
-    # Writing CSV from updated DF
-    df.to_csv("modified_data.csv", index=False)
 
+# Adding new column with value
+df["New_Column"] = "STA"
+
+# Writing CSV from updated DF
+df.to_csv("modified_data.csv", index=False)
