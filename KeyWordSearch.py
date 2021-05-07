@@ -9,4 +9,7 @@ for index in dataframe.index:
         if value in dataframe['Summary'][index]:
             dataframe['Entity_Value'][index] = value
 
+nan_value = float("NaN")
+dataframe.replace("", nan_value, inplace=True)
+
 dataframe.to_csv("KeySearch.csv", index=False)
